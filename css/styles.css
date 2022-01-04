@@ -81,8 +81,12 @@ form button {
     height: 40px;
     box-sizing: border-box;
     border: none;
-    background-color: #eeb3ed;
+    background-color: #ac70d4;
     border-radius: 5px;
+}
+
+form button:hover {
+    background-color: #eeb3ed;
 }
 
 .help a {
