@@ -11,19 +11,19 @@
     }
 
 
-    $human = new User($_POST["email"], 0, $_POST["password"], $link, 0);
-    $result = $human->autorization;
+    $human = new User($_POST["email"], $_POST["password"], $link);
+    $result = $human->autorization();
 
     if ($result == 0) {
-        echo "Ошибка";
+        echo "<p>Ошибка</p>";
     }
     elseif ($result == 1){
-        echo "Успешный вход";
+        echo "<p>Успешный вход</p>";
     }
     elseif ($result == 2){
-        echo "Oшибка при выполнении SQL запроса";
+        echo "<p>Oшибка при выполнении SQL запроса</p>";
     }
     else{
-        echo "Неизвестная ошибка";
+        echo "<p>Неизвестная ошибка</p>";
     }
 ?>

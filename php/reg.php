@@ -11,28 +11,28 @@
     }
 
 
-    $human = new User($_POST["email"], $_POST["login"], $_POST["password"], $link, $_POST["password2"]);
+    $human = new User($_POST["email"], $_POST["password1"], $link, $_POST["login"], $_POST["password2"]);
     $result = $human->registration();
 
     if ($result == 0) {
-        echo "Ошибка";
+        echo "<p>Ошибка</p>";
     }
     elseif ($result == 1){
-        echo "Успешная регистрация";
+        echo "<p>Успешная регистрация</p>";
     }
     elseif ($result == 2){
-        echo "Oшибка при выполнении SQL запроса";
+        echo "<p>Oшибка при выполнении SQL запроса</p>";
     }
     elseif ($result == 11){
-        echo "Пользователь с такой почтой существует";
+        echo "<p>Пользователь с такой почтой существует</p>";
     }
     elseif ($result == 12){
-        echo "Пользователь с таким логином существует";
+        echo "<p>Пользователь с таким логином существует</p>";
     }
     elseif ($result == 13){
-        echo "Пароли не совпадают";
+        echo "<p>Пароли не совпадают</p>";
     }
     else{
-        echo "Неизвестная ошибка";
+        echo "<p>Неизвестная ошибка</p>";
     }
 ?>

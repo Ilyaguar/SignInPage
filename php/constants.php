@@ -20,25 +20,12 @@
 
         private $email, $login, $password, $password2, $link;
 
-        public function __construct($email, $login, $password, $link, $password2) {
-            // проверка введенных данных перед инициализацией
-            if(isset($email) && isset($password)){  
-                $this->email = strip_tags($email);
-                var_dump($this->email);
-                $this->password = md5(strip_tags($password));
-                var_dump($this->password1);
-                $this->link = $link;
-                echo `<p>пароль:$this->password1<br>почта:$this->email</p>`;
-                
-            }
-
-            if($login != 0){
-                $this->login = strip_tags($login);
-            }
-
-            if($password2 != 0){
-                $this->password2 = md5(strip_tags($password2));
-            }
+        public function __construct($email, $password, $link, $login = '', $password2 = '') {
+            $this->email = strip_tags($email);
+            $this->password = md5(strip_tags($password));
+            $this->link = $link;
+            $this->login = strip_tags($login);
+            $this->password2 = md5(strip_tags($password2));
         }
 
         public function autorization(){
@@ -66,7 +53,6 @@
             if ($this->password == $this->password2){
 
                 $sql = "SELECT * FROM `test1` Where `email` = \"$this->email\"";
-                var_dump($sql);
                 $result = mysqli_query($this->link, $sql);
 
                 if (!$result) {
@@ -85,6 +71,7 @@
         
                 if ($row1 == 0 && $row2 == 0) {
                     $sql = "INSERT INTO `test1`(`email`, `login`, `password`) VALUES (\"$this->email\",\"$this->login\",\"$this->password\")"; // выбираем всех в таблице users
+                    var_dump($sql);
                     $result = mysqli_query($link, $sql);
         
                     if (!$result) {
