@@ -27,6 +27,13 @@ body {
     display: flex;
 }
 
+/* .main2 {
+    height: 70vh;
+    width: 55%;
+    z-index: 40;
+    display: flex;
+} */
+
 .left {
     width: 50%;
     height: 100%;
@@ -41,7 +48,7 @@ body {
     border-bottom-right-radius: 5%;
     border-top-right-radius: 5%;
     background-color: rgb(48, 45, 47);
-    padding: 65px 40px;
+    padding: 40px;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -67,17 +74,17 @@ form input {
     box-sizing: border-box;
     color: #fff;
     width: 80%;
-    margin-bottom: 10%;
+    margin-bottom: 8%;
 }
 
 form label {
-    margin-bottom:2.5%;
+    margin-bottom:2%;
     text-align: left;
     width: 80%;
 }
 
 form button {
-    margin-bottom: 8%;
+    margin-bottom: 6%;
     width: 80%;
     height: 40px;
     box-sizing: border-box;
